@@ -5,79 +5,101 @@
 body {
     height: 100vh;
     margin: 0;
+    background: black;
   }
+
+/* Header */
+
+h1 {
+    text-align: center;
+    color: white;
+}
 
 /* Bracket */
 
+div {
+    color: white;
+}
+
 .bracket {
-    border: 1px solid black;
     width: 90%;
     height: 100vh;
     margin: auto;
 }
 
 .round1 {
-    border: 1px solid blue;
     width: 100%;
     height: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .r1game {
-    border: 1px solid red;
-    width: 25%;
+    width: 21%;
     height: 100%;
     float: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 .r1team {
     border: 1px solid green;
-    width: 50%;
+    border-radius: 50px;
+    width: 44%;
     height: 100%;
     float: left;
 }
 
 .round2 {
-    border: 1px solid blue;
     width: 100%;
     height: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .r2game {
-    border: 1px solid red;
-    width: 50%;
+    width: 48%;
     height: 100%;
     float: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 .r2team {
     border: 1px solid green;
-    width: 50%;
+    border-radius: 50px;
+    width: 47%;
     height: 100%;
     float: left;
 }
 
 .round3 {
-    border: 1px solid blue;
     width: 100%;
     height: 25%;
+    margin-bottom: 20px;
 }
 
 .r3game {
-    border: 1px solid red;
     width: 100%;
     height: 100%;
     float: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 .r3team {
     border: 1px solid green;
-    width: 50%;
+    border-radius: 50px;
+    width: 48%;
     height: 100%;
     float: left;
 }
 
 .champ {
-    border: 1px solid purple;
+    border: 1px solid green;
+    border-radius: 50px;
     width: 100%;
     height: 25%;
 }
