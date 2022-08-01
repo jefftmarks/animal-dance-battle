@@ -16,12 +16,12 @@
             
 
             <!-- tournament display-->
-            <div class="tournament">
+            <div id="tournament">
 
                 <!-- tournament instructions -->
                 <div class="tournament-instructions">
                     <h3>Press the button to start the dance competition!</h3>
-                    <div class='button-container'><button class="start-button">Start Tournament</button></div>
+                    <div id='tournament-button-container'><button class="start-button">Start Tournament</button></div>
                 </div>
 
                 <!-- bracket -->
@@ -71,16 +71,19 @@
             </div>
 
             <!-- versus display -->
-            <div class="versus">
+            <div id="versus">
 
                 <!-- versus instructions -->
                 <div class="versus-instructions">
                     <h3>Hover over each animal to display its stats! Click which animal you think will when the dance contest.</h3>
+                    <div id='vs-button-container'>
+                        <button id='vs-button' class="start-button">Choose Winner</button>
+                    </div>
                 </div>
                 
                 <div class="vs-container">
-                    <img class="vs-dancer" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Pink_backed_pelican_side_view.jpg"></img>
-                    <img class="vs-dancer" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Ruddy_Shelduck_or_Brahminy_Duck_.jpg"></img>
+                    <img class="vs-dancer" id="vs-dancer-1"></img>
+                    <img class="vs-dancer" id="vs-dancer-2"></img>
                 </div>
                 <div class="stats-container">
                     <h3>Animal Stats:</h3>
