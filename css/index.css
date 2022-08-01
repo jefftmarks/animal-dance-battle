@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+  }
+
+/* Bracket */
+
+.bracket {
+    border: 1px solid black;
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+}
+
+.round1 {
+    border: 1px solid blue;
+    width: 100%;
+    height: 25%;
+}
+
+.r1game {
+    border: 1px solid red;
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.r1team {
+    border: 1px solid green;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.round2 {
+    border: 1px solid blue;
+    width: 100%;
+    height: 25%;
+}
+
+.r2game {
+    border: 1px solid red;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.r2team {
+    border: 1px solid green;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.round3 {
+    border: 1px solid blue;
+    width: 100%;
+    height: 25%;
+}
+
+.r3game {
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.r3team {
+    border: 1px solid green;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.champ {
+    border: 1px solid purple;
+    width: 100%;
+    height: 25%;
+}
