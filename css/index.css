@@ -15,9 +15,16 @@ h1 {
     color: white;
 }
 
-/* Instructions */
+/* ----------- tournament display ----------- */
 
-.instructions {
+.tournament {
+    display: none;
+}
+
+
+/* Tournament Instructions */
+
+.tournament-instructions {
     margin-top: 40px;
     margin-bottom: 50px;
     text-align: center;
@@ -40,7 +47,7 @@ div {
     color: white;
 }
 
-img {
+.bracket img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -134,4 +141,42 @@ img {
     border-radius: 50px;
     border: 1px solid white;
     background-color: purple;
+}
+
+/* ----------- Versus Display ----------- */
+
+.versus {
+    display: block;
+}
+
+.vs-container {
+    margin: auto;
+    border: 1px solid green;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.vs-dancer {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Versus Instructions */
+
+.versus-instructions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.stats-container {
+    border: 1px solid green;
+    margin: auto;
+    padding-left: 10px;
+    width: 40%;
+    height: 400px;
 }
