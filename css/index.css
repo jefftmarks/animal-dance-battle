@@ -159,8 +159,8 @@ div {
 }
 
 .vs-dancer {
-    width: 40%;
-    height: auto;
+    width: auto;
+    height: 100%;
     object-fit: contain;
     display: flex;
     justify-content: space-evenly;
