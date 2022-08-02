@@ -11,6 +11,14 @@ const nameStat = document.querySelector('.stats-name')
 const habitatStat = document.querySelector('.stats-habitat')
 const dietStat = document.querySelector('.stats-diet')
 
+const div1 = document.getElementById('div-1');
+const div2 = document.getElementById('div-2');
+const div3 = document.getElementById('div-3');
+const div4 = document.getElementById('div-4');
+const div5 = document.getElementById('div-5');
+const div6 = document.getElementById('div-6');
+const div7 = document.getElementById('div-7');
+const div8 = document.getElementById('div-8');
 const div9 = document.getElementById('div-9');
 const div10 = document.getElementById('div-10');
 const div11 = document.getElementById('div-11');
@@ -219,6 +227,14 @@ function startR3() {
 }
 
 function resetBracket() {
+    div1.firstChild.remove();
+    div2.firstChild.remove();
+    div3.firstChild.remove();
+    div4.firstChild.remove();
+    div5.firstChild.remove();
+    div6.firstChild.remove();
+    div7.firstChild.remove();
+    div8.firstChild.remove();
     div9.firstChild.remove();
     div10.firstChild.remove();
     div11.firstChild.remove();
@@ -228,7 +244,10 @@ function resetBracket() {
 }
 
 function assignDancer(dancer) {
-    document.querySelector(`#dancer-${counter}`).src = dancer.image_link;
+    const div = document.getElementById(`div-${counter}`);
+    const dancerImage = document.createElement('img');
+    dancerImage.src = dancer.image_link;
+    div.append(dancerImage);
     counter++;
 }
 
