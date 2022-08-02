@@ -5,6 +5,9 @@ const vsDancer1 = document.getElementById('vs-dancer-1')
 const vsDancer2 = document.getElementById('vs-dancer-2')
 const vsButton = document.getElementById('vs-button')
 const bracket = document.querySelector('.bracket');
+const nameStat = document.querySelector('.stats-name')
+const habitatStat = document.querySelector('.stats-habitat')
+const dietStat = document.querySelector('.stats-diet')
 
 let counter = 1
 let game = 1
@@ -147,7 +150,10 @@ vsButton.addEventListener('click', () => {
     }
 })
 
+//show stats event listeners
+vsDancer1.addEventListener('mouseover', showStats1)
 
+vsDancer2.addEventListener('mouseover', showStats2)
 
 //start-round functions
 function setupR1() {
@@ -206,4 +212,80 @@ function assignWinner6(e) {
 //round 3 handler
 function assignWinner6(e) {
     champ = e.target.src
+}
+//show stats handler
+function showStats1() {
+    if (game === 1) {
+        nameStat.innerText = `Name: ${animal1.name}`
+        habitatStat.innerText = `Habitat: ${animal1.habitat}`
+        dietStat.innerText = `Diet: ${animal1.diet}`  
+    }
+    else if (game === 2) {
+        nameStat.innerText = `Name: ${animal3.name}`
+        habitatStat.innerText = `Habitat: ${animal3.habitat}`
+        dietStat.innerText = `Diet: ${animal3.diet}`
+    }
+    else if (game === 3) {
+        nameStat.innerText = `Name: ${animal5.name}`
+        habitatStat.innerText = `Habitat: ${animal5.habitat}`
+        dietStat.innerText = `Diet: ${animal5.diet}`
+    }
+    else if (game === 4) {
+        nameStat.innerText = `Name: ${animal7.name}`
+        habitatStat.innerText = `Habitat: ${animal7.habitat}`
+        dietStat.innerText = `Diet: ${animal7.diet}`
+    }
+    else if (game === 5) {
+        nameStat.innerText = `Name: ${roundOneWinner1.name}`
+        habitatStat.innerText = `Habitat: ${roundOneWinner1.habitat}`
+        dietStat.innerText = `Diet: ${roundOneWinner1.diet}`
+    }
+    else if (game === 6) {
+        nameStat.innerText = `Name: ${roundOneWinner3.name}`
+        habitatStat.innerText = `Habitat: ${roundOneWinner3.habitat}`
+        dietStat.innerText = `Diet: ${roundOneWinner3.diet}`
+    }
+    else if (game === 7) {
+        nameStat.innerText = `Name: ${roundTwoWinner1.name}`
+        habitatStat.innerText = `Habitat: ${roundTwoWinner1.habitat}`
+        dietStat.innerText = `Diet: ${roundTwoWinner1.diet}`
+    }
+}
+
+function showStats2() {
+    if (game === 1) {
+        nameStat.innerText = `Name: ${animal2.name}`
+        habitatStat.innerText = `Habitat: ${animal2.habitat}`
+        dietStat.innerText = `Diet: ${animal2.diet}`  
+    }
+    else if (game === 2) {
+        nameStat.innerText = `Name: ${animal4.name}`
+        habitatStat.innerText = `Habitat: ${animal4.habitat}`
+        dietStat.innerText = `Diet: ${animal4.diet}`
+    }
+    else if (game === 3) {
+        nameStat.innerText = `Name: ${animal6.name}`
+        habitatStat.innerText = `Habitat: ${animal6.habitat}`
+        dietStat.innerText = `Diet: ${animal6.diet}`
+    }
+    else if (game === 4) {
+        nameStat.innerText = `Name: ${animal8.name}`
+        habitatStat.innerText = `Habitat: ${animal8.habitat}`
+        dietStat.innerText = `Diet: ${animal8.diet}`
+    }
+    else if (game === 5) {
+        nameStat.innerText = `Name: ${roundOneWinner2.name}`
+        habitatStat.innerText = `Habitat: ${roundOneWinner2.habitat}`
+        dietStat.innerText = `Diet: ${roundOneWinner2.diet}`
+    }
+    else if (game === 6) {
+        nameStat.innerText = `Name: ${roundOneWinner4.name}`
+        habitatStat.innerText = `Habitat: ${roundOneWinner4.habitat}`
+        dietStat.innerText = `Diet: ${roundOneWinner4.diet}`
+    }
+    else if (game === 7) {
+        nameStat.innerText = `Name: ${roundTwoWinner2.name}`
+        habitatStat.innerText = `Habitat: ${roundTwoWinner2.habitat}`
+        dietStat.innerText = `Diet: ${roundTwoWinner2.diet}`
+    }
 }
