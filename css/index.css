@@ -16,6 +16,10 @@ body {
     height: auto;
     padding: 10px;
     font-size: 18px;
+    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    color: black;
+    border: 3px solid black;
+    border-radius: 20px;
 }
 
 h1 {
@@ -149,14 +153,6 @@ div {
     text-align: center;
 }
 
-#stats-container {
-    margin: auto;
-    padding: 20px;
-    width: 40%;
-    height: 400px;
-    margin-top: 50px;
-}
-
 /* Stats */
 
 li {
@@ -167,6 +163,11 @@ li {
    background: rgba(0, 0, 0, 0.5);
    border: 3px solid white;
    border-radius: 30px;
+   margin: auto;
+   padding: 20px;
+   width: 40%;
+   height: 400px;
+   margin-top: 50px;
 }
 
 #stats-container h3 {
