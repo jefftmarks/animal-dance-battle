@@ -14,57 +14,56 @@
         </header>
         <main>
             
-
             <!-- tournament display-->
             <div id="tournament">
 
                 <!-- tournament instructions -->
                 <div class="tournament-instructions">
                     <h3>Press the button to start the dance competition!</h3>
-                    <div id='tournament-button-container'><button class="start-button">Start Tournament</button></div>
+                    <button class="game-btn" id="start-btn">Click to Start Tournament</button>
                 </div>
 
                 <!-- bracket -->
-                <div class="bracket">
-                    <div class="round1">
-                        <div class="r1game">
-                            <div class="r1team"><img id='dancer-1'></img></div>
-                            <div class="r1team"><img id='dancer-2'></img></div>
+                <div id="bracket">
+                    <div class="round" id="round-1">
+                        <div class="r1-game">
+                            <div class="r1-team"><img id="dancer-1"></img></div>
+                            <div class="r1-team"><img id="dancer-2"></img></div>
                         </div>
-                        <div class="r1game">
-                            <div class="r1team"><img id='dancer-3'></img></div>
-                            <div class="r1team"><img id='dancer-4'></img></div>
+                        <div class="r1-game">
+                            <div class="r1-team"><img id="dancer-3"></img></div>
+                            <div class="r1-team"><img id="dancer-4"></img></div>
                         </div>
-                        <div class="r1game">
-                            <div class="r1team"><img id='dancer-5'></img></div>
-                            <div class="r1team"><img id='dancer-6'></img></div>
+                        <div class="r1-game">
+                            <div class="r1-team"><img id="dancer-5"></img></div>
+                            <div class="r1-team"><img id="dancer-6"></img></div>
                         </div>
-                        <div class="r1game">
-                            <div class="r1team"><img id='dancer-7'></img></div>
-                            <div class="r1team"><img id='dancer-8'></img></div>
-                        </div>
-                    </div>
-
-                    <div class="round2">
-                        <div class="r2game">
-                            <div class="r2team"><img id='dancer-9'></img></div>
-                            <div class="r2team"><img id='dancer-10'></img></div>
-                        </div>
-                        <div class="r2game">
-                            <div class="r2team"><img id='dancer-11'></img></div>
-                            <div class="r2team"><img id='dancer-12'></img></div>
+                        <div class="r1-game">
+                            <div class="r1-team"><img id="dancer-7"></img></div>
+                            <div class="r1-team"><img id="dancer-8"></img></div>
                         </div>
                     </div>
 
-                    <div class="round3">
-                        <div class="r3game">
-                            <div class="r3team"><img id='dancer-13'></img></div>
-                            <div class="r3team"><img id='dancer-14'></img></div>
+                    <div class="round" id="round-2">
+                        <div class="r2-game">
+                            <div class="r2-team" id="div-9"></div>
+                            <div class="r2-team" id="div-10"></div>
+                        </div>
+                        <div class="r2-game">
+                            <div class="r2-team" id="div-11"></div>
+                            <div class="r2-team" id="div-12"></div>
+                        </div>
+                    </div>
+
+                    <div class="round" id="round-3">
+                        <div class="r3-game">
+                            <div class="r3-team" id="div-13"></div>
+                            <div class="r3-team" id="div-14"></div>
                         </div>
                     </div>
         
-                    <div class="champ">
-                        <img id='dancer-15'></img>
+                    <div id="champ">
+                        <img id="dancer-15"></img>
                     </div>
                 </div>
 
@@ -74,20 +73,18 @@
             <div id="versus">
 
                 <!-- versus instructions -->
-                <div class="versus-instructions">
+                <div id="vs-instructions">
                     <h3>Hover over each animal to display its stats! Click which animal you think will when the dance contest.</h3>
-                    <div id='vs-button-container'>
-                        <button id='vs-button' class="start-button">Choose Winner</button>
-                    </div>
+                        <button id="vs-btn" class="game-btn">Choose Winner</button>
                 </div>
                 
-                <div class="vs-container">
-                    <img class="vs-dancer" id="vs-dancer-1"></img>
-                    <img class="vs-dancer" id="vs-dancer-2"></img>
+                <div id="vs-container">
+                    <img class="vs-dancer" id="vs-left"></img>
+                    <img class="vs-dancer" id="vs-right"></img>
                 </div>
-                <div class="stats-container">
+                <div id="stats-container">
                     <h3>Animal Stats:</h3>
-                    <ul class="stats"></ul>
+                    <ul id="stats"></ul>
                 </div>
             </div>
 
