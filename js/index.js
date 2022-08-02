@@ -91,6 +91,7 @@ startBtn.addEventListener('click', () => {
 vsLeft.addEventListener('click', () => {
     vsLeft.style.opacity = '1';
     vsRight.style.opacity = '0.2';
+    statsList.style.display = 'block';
     ready = true;
     if (game < 8) {
         if(game === 7) {
@@ -121,6 +122,7 @@ vsLeft.addEventListener('click', () => {
 vsRight.addEventListener('click', () => {
     vsRight.style.opacity = '1';
     vsLeft.style.opacity = '0.2';
+    statsList.style.display = 'block';
     ready = true;
     if (game < 8) {
         if(game === 7) {
@@ -155,6 +157,7 @@ document.addEventListener('keydown', (e) => {
             ready = false
             vsLeft.style.opacity = '1';
             vsRight.style.opacity = '1';
+            statsList.style.display = 'none';
             matchInstructions.innerText = "Hover over each animal to display its stats! Click which animal you think will win the dance contest."
 
             if (game === 2) {
