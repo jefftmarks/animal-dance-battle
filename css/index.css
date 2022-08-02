@@ -40,10 +40,6 @@ h1 {
 
 /* Bracket */
 
-div {
-    color: white;
-}
-
 #bracket img {
     width: 100%;
     height: 100%;
@@ -67,6 +63,7 @@ div {
     float: left;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .r2-game {
@@ -90,6 +87,7 @@ div {
     width: 48%;
     height: 100%;
     float: left;
+    z-index: 1;
 }
 
 .r2-team {

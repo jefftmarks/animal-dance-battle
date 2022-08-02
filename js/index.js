@@ -274,6 +274,21 @@ function resetBracket() {
     div12.firstChild.remove();
     div13.firstChild.remove();
     div14.firstChild.remove();
+
+    disableAnimation(div1);
+    disableAnimation(div2);
+    disableAnimation(div3);
+    disableAnimation(div4);
+    disableAnimation(div5);
+    disableAnimation(div6);
+    disableAnimation(div7);
+    disableAnimation(div8);
+    disableAnimation(div9);
+    disableAnimation(div10);
+    disableAnimation(div11);
+    disableAnimation(div12);
+    disableAnimation(div13);
+    disableAnimation(div14);
 }
 
 
@@ -388,4 +403,8 @@ function setAnimation(div) {
     } else if (div.getAttribute('animation-id') === 'animation-2') {
         div.style.animationDuration = '2s';
     }
+}
+
+function disableAnimation(div) {
+    div.style.animationDuration = '0s';
 }
