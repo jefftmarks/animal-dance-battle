@@ -314,6 +314,7 @@ function showStats1() {
         nameStat.innerText = `Name: ${quartersWinner1.name}`
         habitatStat.innerText = `Habitat: ${quartersWinner1.habitat}`
         dietStat.innerText = `Diet: ${quartersWinner1.diet}`
+        moveStat.innerText = `Signature Dance Move: ${quartersWinner1.sigDanceMove}`
     }
     else if (game === 6) {
         nameStat.innerText = `Name: ${quartersWinner3.name}`
@@ -375,7 +376,7 @@ function showStats2() {
 }
 
 function danceMoveGenerator(name, danceMove) {
-    return `${name.split(' ').slice(-1)}` + ' ' + `${danceMove[Math.floor(Math.random() * 14) + 1]}`
+    return `${name.split(' ').slice(-1)}` + ' ' + `${danceMove[Math.floor(Math.random() * 13) + 1]}`
 }
 
 
