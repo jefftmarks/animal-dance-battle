@@ -10,6 +10,8 @@ const bracket = document.getElementById('bracket');
 const nameStat = document.querySelector('.stats-name')
 const habitatStat = document.querySelector('.stats-habitat')
 const dietStat = document.querySelector('.stats-diet')
+const moveStat = document.querySelector('.stats-dancemove')
+const danceMoves = ['Boogie', 'Hustle', 'Tango', 'Waltz', 'Stomp', '2-Step', 'Shuffle', 'Get-Down', 'Wiggle', 'Shake', 'Swim', 'Split', 'Trot', 'Hop']
 
 const div1 = document.getElementById('div-1');
 const div2 = document.getElementById('div-2');
@@ -195,7 +197,17 @@ function setupR1() {
         animal6 = dancers[5];
         animal7 = dancers[6];
         animal8 = dancers[7];
+        animal1['sigDanceMove'] = `${danceMoveGenerator(`${animal1.name}`, danceMoves)}`;
+        animal2['sigDanceMove'] = `${danceMoveGenerator(`${animal2.name}`, danceMoves)}`;
+        animal3['sigDanceMove'] = `${danceMoveGenerator(`${animal3.name}`, danceMoves)}`;
+        animal4['sigDanceMove'] = `${danceMoveGenerator(`${animal4.name}`, danceMoves)}`;
+        animal5['sigDanceMove'] = `${danceMoveGenerator(`${animal5.name}`, danceMoves)}`;
+        animal6['sigDanceMove'] = `${danceMoveGenerator(`${animal6.name}`, danceMoves)}`;
+        animal7['sigDanceMove'] = `${danceMoveGenerator(`${animal7.name}`, danceMoves)}`;
+        animal8['sigDanceMove'] = `${danceMoveGenerator(`${animal8.name}`, danceMoves)}`;
     })
+    
+    
 }
 
 function startR2() {
@@ -264,22 +276,27 @@ function showStats1() {
     if (game === 1) {
         nameStat.innerText = `Name: ${animal1.name}`
         habitatStat.innerText = `Habitat: ${animal1.habitat}`
-        dietStat.innerText = `Diet: ${animal1.diet}`  
+        dietStat.innerText = `Diet: ${animal1.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal1.sigDanceMove}`
+
     }
     else if (game === 2) {
         nameStat.innerText = `Name: ${animal3.name}`
         habitatStat.innerText = `Habitat: ${animal3.habitat}`
         dietStat.innerText = `Diet: ${animal3.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal3.sigDanceMove}`
     }
     else if (game === 3) {
         nameStat.innerText = `Name: ${animal5.name}`
         habitatStat.innerText = `Habitat: ${animal5.habitat}`
         dietStat.innerText = `Diet: ${animal5.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal5.sigDanceMove}`
     }
     else if (game === 4) {
         nameStat.innerText = `Name: ${animal7.name}`
         habitatStat.innerText = `Habitat: ${animal7.habitat}`
         dietStat.innerText = `Diet: ${animal7.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal7.sigDanceMove}`
     }
     else if (game === 5) {
         nameStat.innerText = `Name: ${quartersWinner1.name}`
@@ -290,11 +307,13 @@ function showStats1() {
         nameStat.innerText = `Name: ${quartersWinner3.name}`
         habitatStat.innerText = `Habitat: ${quartersWinner3.habitat}`
         dietStat.innerText = `Diet: ${quartersWinner3.diet}`
+        moveStat.innerText = `Signature Dance Move: ${quartersWinner3.sigDanceMove}`
     }
     else if (game === 7) {
         nameStat.innerText = `Name: ${semisWinner1.name}`
         habitatStat.innerText = `Habitat: ${semisWinner1.habitat}`
         dietStat.innerText = `Diet: ${semisWinner1.diet}`
+        moveStat.innerText = `Signature Dance Move: ${semisWinner1.sigDanceMove}`
     }
 }
 
@@ -302,38 +321,49 @@ function showStats2() {
     if (game === 1) {
         nameStat.innerText = `Name: ${animal2.name}`
         habitatStat.innerText = `Habitat: ${animal2.habitat}`
-        dietStat.innerText = `Diet: ${animal2.diet}`  
+        dietStat.innerText = `Diet: ${animal2.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal2.sigDanceMove}`  
     }
     else if (game === 2) {
         nameStat.innerText = `Name: ${animal4.name}`
         habitatStat.innerText = `Habitat: ${animal4.habitat}`
         dietStat.innerText = `Diet: ${animal4.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal4.sigDanceMove}`
     }
     else if (game === 3) {
         nameStat.innerText = `Name: ${animal6.name}`
         habitatStat.innerText = `Habitat: ${animal6.habitat}`
         dietStat.innerText = `Diet: ${animal6.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal6.sigDanceMove}`
     }
     else if (game === 4) {
         nameStat.innerText = `Name: ${animal8.name}`
         habitatStat.innerText = `Habitat: ${animal8.habitat}`
         dietStat.innerText = `Diet: ${animal8.diet}`
+        moveStat.innerText = `Signature Dance Move: ${animal8.sigDanceMove}`
     }
     else if (game === 5) {
         nameStat.innerText = `Name: ${quartersWinner2.name}`
         habitatStat.innerText = `Habitat: ${quartersWinner2.habitat}`
         dietStat.innerText = `Diet: ${quartersWinner2.diet}`
+        moveStat.innerText = `Signature Dance Move: ${quartersWinner2.sigDanceMove}`
     }
     else if (game === 6) {
         nameStat.innerText = `Name: ${quartersWinner4.name}`
         habitatStat.innerText = `Habitat: ${quartersWinner4.habitat}`
         dietStat.innerText = `Diet: ${quartersWinner4.diet}`
+        moveStat.innerText = `Signature Dance Move: ${quartersWinner4.sigDanceMove}`
     }
     else if (game === 7) {
         nameStat.innerText = `Name: ${semisWinner2.name}`
         habitatStat.innerText = `Habitat: ${semisWinner2.habitat}`
         dietStat.innerText = `Diet: ${semisWinner2.diet}`
+        moveStat.innerText = `Signature Dance Move: ${semisWinner2.sigDanceMove}`
     }
+}
+
+function danceMoveGenerator(name, danceMove) {
+    return `${name.split(' ').slice(-1)}` + ' ' + `${danceMove[Math.floor(Math.random() * 14) + 1]}`
 }
 
 // //round 1 handlers
