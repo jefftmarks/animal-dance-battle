@@ -5,7 +5,7 @@ const tournamentDisplay = document.getElementById('tournament');
 const vsDisplay = document.getElementById('versus');
 const vsLeft = document.getElementById('vs-left');
 const vsRight = document.getElementById('vs-right');
-const vsBtn = document.getElementById('vs-btn');
+const matchInstructions = document.querySelector('#vs-instructions h3')
 const bracket = document.getElementById('bracket');
 
 const statsList = document.querySelector('.stats');
@@ -31,7 +31,7 @@ const div13 = document.getElementById('div-13');
 const div14 = document.getElementById('div-14');
 
 // ---------- Trackers ----------
-
+let ready = true;
 let counter = 1;
 let game = 1;
 
@@ -68,23 +68,18 @@ startBtn.addEventListener('click', () => {
         vsRight.style.display = 'block';
         vsLeft.src = animal1.image_link;
         vsRight.src = animal2.image_link;
-        vsBtn.innerText = 'Choose Winner';
-        vsBtn.disabled = true;
     } else if (startBtn.innerText === 'Click to Start Round 2') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
         vsLeft.src = quartersWinner1.image_link;
         vsRight.src = quartersWinner2.image_link;
-        vsBtn.disabled = true;
     } else if (startBtn.innerText === 'Click to Start Championship Round!') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
         vsLeft.src = semisWinner1.image_link;
         vsRight.src = semisWinner2.image_link;
-        vsBtn.innerText = 'Choose Champion!';
-        vsBtn.disabled = true;
     }
 });
 
@@ -96,7 +91,14 @@ vsLeft.addEventListener('click', () => {
     vsRight.style.border = '';
     vsLeft.style.opacity = '1';
     vsRight.style.opacity = '0.2';
-    vsBtn.disabled = false;
+    ready = true;
+    if (game < 8) {
+        if(game === 7) {
+            matchInstructions.innerText = "Press Enter to Choose the Champion!"
+        }
+        else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
+        }
+    }
 
     if (game === 1) {
         quartersWinner1 = animal1;
@@ -121,7 +123,14 @@ vsRight.addEventListener('click', () => {
     vsLeft.style.border = '';
     vsRight.style.opacity = '1';
     vsLeft.style.opacity = '0.2';
-    vsBtn.disabled = false;
+    ready = true;
+    if (game < 8) {
+        if(game === 7) {
+            matchInstructions.innerText = "Press Enter to Choose the Champion!"
+        }
+        else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
+        }
+    }
 
     if (game === 1) {
         quartersWinner1 = animal2;
@@ -141,54 +150,57 @@ vsRight.addEventListener('click', () => {
 })
 
 // Submit Winner and Trigger Next Game
-vsBtn.addEventListener('click', () => {
-    game++;
-    vsBtn.disabled = true;
-    vsLeft.style.border = '';
-    vsRight.style.border = '';
-    vsLeft.style.opacity = '1';
-    vsRight.style.opacity = '1';
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Enter") {
+        if ((vsDisplay.style.display = 'block' && ready === true) || (game === 8)) {
+            game++;
+            ready = false
+            vsLeft.style.border = '';
+            vsRight.style.border = '';
+            vsLeft.style.opacity = '1';
+            vsRight.style.opacity = '1';
+            matchInstructions.innerText = "Hover over each animal to display its stats! Click which animal you think will win the dance contest."
 
-    if (game === 2) {
-        vsLeft.src = animal3.image_link;
-        vsRight.src = animal4.image_link;
-    } else if (game === 3) {
-        vsLeft.src = animal5.image_link;
-        vsRight.src = animal6.image_link;
-    } else if (game === 4) {
-        vsLeft.src = animal7.image_link;
-        vsRight.src = animal8.image_link;
-    } else if (game === 5) {
-        tournamentDisplay.style.display = 'block';
-        vsDisplay.style.display = 'none';
-        startBtn.innerText = 'Click to Start Round 2';
-        startR2();
-    } else if (game === 6) {
-        vsLeft.src = quartersWinner3.image_link;
-        vsRight.src = quartersWinner4.image_link;
-    } else if (game === 7) {
-        tournamentDisplay.style.display = 'block';
-        vsDisplay.style.display = 'none';
-        startBtn.innerText = 'Click to Start Championship Round!';
-        startR3();
-    } else if (game === 8) {
-        if (champ === semisWinner1) {
-            vsRight.style.display = 'none';
-            vsBtn.disabled = false;
-            vsBtn.innerText = 'Play Again?';
-        } else if (champ === semisWinner2) {
-            vsLeft.style.display = 'none';
-            vsBtn.disabled = false;
-            vsBtn.innerText = 'Play Again?';
+            if (game === 2) {
+                vsLeft.src = animal3.image_link;
+                vsRight.src = animal4.image_link;
+            } else if (game === 3) {
+                vsLeft.src = animal5.image_link;
+                vsRight.src = animal6.image_link;
+            } else if (game === 4) {
+                vsLeft.src = animal7.image_link;
+                vsRight.src = animal8.image_link;
+            } else if (game === 5) {
+                tournamentDisplay.style.display = 'block';
+                vsDisplay.style.display = 'none';
+                startBtn.innerText = 'Click to Start Round 2';
+                startR2();
+            } else if (game === 6) {
+                vsLeft.src = quartersWinner3.image_link;
+                vsRight.src = quartersWinner4.image_link;
+            } else if (game === 7) {
+                tournamentDisplay.style.display = 'block';
+                vsDisplay.style.display = 'none';
+                startBtn.innerText = 'Click to Start Championship Round!';
+                startR3();
+            } else if (game === 8) {
+                if (champ === semisWinner1) {
+                    vsRight.style.display = 'none';
+                    matchInstructions.innerText = 'Press Enter to play again!';
+                } else if (champ === semisWinner2) {
+                    vsLeft.style.display = 'none';
+                    matchInstructions.innerText = 'Press Enter to play again!';
+                }
+            } else if (game === 9) {
+                tournamentDisplay.style.display = 'block';
+                vsDisplay.style.display = 'none';
+                game = 1;
+                counter = 1;
+                resetBracket();
+                setupR1();
+                startBtn.innerText = 'Click to Start Round 1';
+            }
         }
-    } else if (game === 9) {
-        tournamentDisplay.style.display = 'block';
-        vsDisplay.style.display = 'none';
-        game = 1;
-        counter = 1;
-        resetBracket();
-        setupR1();
-        startBtn.innerText = 'Click to Start Round 1';
     }
 })
 
