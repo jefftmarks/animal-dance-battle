@@ -196,7 +196,7 @@ function assignDancer(dancer) {
     dancerImage.src = dancer.image_link;
     div.append(dancerImage);
 
-    console.log(div.className)
+    setAnimation(div);
 
     counter++;
 }
@@ -229,28 +229,34 @@ function startR2() {
     const dancer9 = document.createElement('img');
     dancer9.src = quartersWinner1.image_link;
     div9.append(dancer9);
+    setAnimation(div9);
 
     const dancer10 = document.createElement('img');
     dancer10.src = quartersWinner2.image_link;
     div10.append(dancer10);
+    setAnimation(div10);
 
     const dancer11 = document.createElement('img');
     dancer11.src = quartersWinner3.image_link;
     div11.append(dancer11);
+    setAnimation(div11);
 
     const dancer12 = document.createElement('img');
     dancer12.src = quartersWinner4.image_link;
     div12.append(dancer12);
+    setAnimation(div12);
 }
 
 function startR3() {
     const dancer13 = document.createElement('img');
     dancer13.src = semisWinner1.image_link;
     div13.append(dancer13);
+    setAnimation(div13);
 
     const dancer14 = document.createElement('img');
     dancer14.src = semisWinner2.image_link;
     div14.append(dancer14);
+    setAnimation(div14);
 }
 
 function resetBracket() {
@@ -372,27 +378,13 @@ function danceMoveGenerator(name, danceMove) {
     return `${name.split(' ').slice(-1)}` + ' ' + `${danceMove[Math.floor(Math.random() * 14) + 1]}`
 }
 
-// //round 1 handlers
-// function assignWinner1(e) {
-//     quartersWinner1 = e.target.src
-// }
-// function assignWinner2(e) {
-//     quartersWinner2 = e.target.src
-// }
-// function assignWinner3(e) {
-//     quartersWinner3 = e.target.src
-// }
-// function assignWinner4(e) {
-//     quartersWinner4 = e.target.src
-// }
-// // round 2 handlers
-// function assignWinner5(e) {
-//     semisWinner1 = e.target.src
-// }
-// function assignWinner6(e) {
-//     semisWinner2 = e.target.src
-// }
-// //round 3 handler
-// function assignWinner6(e) {
-//     champ = e.target.src
-// }
+
+// ---------- Animation ----------
+
+function setAnimation(div) {
+    if (div.getAttribute('animation-id') === 'animation-1') {
+        div.style.animationDuration = '1s';
+    } else if (div.getAttribute('animation-id') === 'animation-2') {
+        div.style.animationDuration = '2s';
+    }
+}
