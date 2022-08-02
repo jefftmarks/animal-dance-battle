@@ -90,40 +90,64 @@ div {
 }
 
 .r1-team {
-    border: 1px solid white;
     border-radius: 50px;
     width: 44%;
     height: 100%;
     float: left;
-    background-color: red;
 }
 
 .r2-team {
-    border: 1px solid white;
     border-radius: 50px;
     width: 47%;
     height: 100%;
     float: left;
-    background-color: green;
 }
 
 .r3-team {
-    border: 1px solid white;
     border-radius: 50px;
     width: 47%;
     height: 100%;
     float: left;
-    background-color: blue;
-    
 }
 
 #champ {
-    width: 50%;
-    height: 25%;
+    width: 25%;
+    height: 100%;
     margin: 0 auto;
     border-radius: 50px;
-    border: 1px solid white;
-    background-color: purple;
+}
+
+
+/* ----------- Disco Styles ----------- */
+
+/* Div Gradients  */
+
+.blue {
+    background: radial-gradient(#b4f8fa, #1170FF);
+}
+
+.pink {
+    background: radial-gradient(#f4cef5, #fa34cf);
+}
+
+.orange {
+    background: radial-gradient(#fffce6, #FFBC11);
+}
+
+.red {
+    background: radial-gradient(#ffedeb, #fc4c14);
+}
+
+.green {
+    background: radial-gradient(#f0ffde, #52fc14);
+}
+
+.purple {
+    background: radial-gradient(#ecdbff, #c342ff);
+}
+
+.rainbow {
+    background: radial-gradient(#e3fffd, #2effcb);
 }
 
 
