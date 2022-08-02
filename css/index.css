@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    background-image: url("/Users/jeffmarks/Development/code/phase-1/animal-dance-battle/images/disco-background.jpeg");
+    background-image: url("../images/disco-background.jpeg");
     background-size: cover;
   }
 
