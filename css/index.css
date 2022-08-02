@@ -31,6 +31,7 @@ div {
 
 #tournament {
     display: block;
+    padding-bottom: 20px;
 }
 
 
@@ -120,6 +121,7 @@ div {
 
 #versus {
     display: none;
+    padding-bottom: 50px;
 }
 
 #vs-container {
@@ -149,17 +151,28 @@ div {
 
 #stats-container {
     margin: auto;
-    padding-left: 10px;
+    padding: 20px;
     width: 40%;
     height: 400px;
+    margin-top: 50px;
 }
 
 /* Stats */
 
 li {
-    font-size: 20px;
+    font-size: 30px;
 }
 
+#stats-container {
+   background: rgba(0, 0, 0, 0.5);
+   border: 3px solid white;
+   border-radius: 30px;
+}
+
+#stats-container h3 {
+    font-size: 30px;
+    text-decoration: underline;
+}
 
 /* ----------- Disco Styles ----------- */
 
