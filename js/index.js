@@ -391,7 +391,15 @@ function showStats2() {
 }
 
 function danceMoveGenerator(name, danceMove) {
-    return `${name.split(' ').slice(-1)}` + ' ' + `${danceMove[Math.floor(Math.random() * 13) + 1]}`
+    const rawName = name.split(' ').slice(-1)[0];
+    const nameArray = rawName.split('');
+    nameArray[0] = nameArray[0].toUpperCase();
+    const titleCaseName = nameArray.join('');
+
+    return `${titleCaseName} ${danceMove[Math.floor(Math.random() * 13) + 1]}`
+}
+
+function titleCase(str) {
 }
 
 
