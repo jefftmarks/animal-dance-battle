@@ -61,8 +61,11 @@ startBtn.addEventListener('click', () => {
     } else if (startBtn.innerText === 'Click to Start Round 1') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
+        vsLeft.style.display = 'block';
+        vsRight.style.display = 'block';
         vsLeft.src = animal1.image_link;
         vsRight.src = animal2.image_link;
+        vsBtn.innerText = 'Choose Winner';
         vsBtn.disabled = true;
     } else if (startBtn.innerText === 'Click to Start Round 2') {
         tournamentDisplay.style.display = 'none';
@@ -184,6 +187,20 @@ vsBtn.addEventListener('click', () => {
     }
 })
 
+
+// Populate Rounds
+
+function assignDancer(dancer) {
+    const div = document.getElementById(`div-${counter}`);
+    const dancerImage = document.createElement('img');
+    dancerImage.src = dancer.image_link;
+    div.append(dancerImage);
+
+    console.log(div.className)
+
+    counter++;
+}
+
 function setupR1() {
     fetch('https://zoo-animal-api.herokuapp.com/animals/rand/8')
     .then(res => res.json())
@@ -206,8 +223,6 @@ function setupR1() {
         animal7['sigDanceMove'] = `${danceMoveGenerator(`${animal7.name}`, danceMoves)}`;
         animal8['sigDanceMove'] = `${danceMoveGenerator(`${animal8.name}`, danceMoves)}`;
     })
-    
-    
 }
 
 function startR2() {
@@ -254,15 +269,6 @@ function resetBracket() {
     div13.firstChild.remove();
     div14.firstChild.remove();
 }
-
-function assignDancer(dancer) {
-    const div = document.getElementById(`div-${counter}`);
-    const dancerImage = document.createElement('img');
-    dancerImage.src = dancer.image_link;
-    div.append(dancerImage);
-    counter++;
-}
-
 
 
 // ---------- Show Stats ----------

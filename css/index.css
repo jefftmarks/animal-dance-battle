@@ -118,39 +118,6 @@ div {
 }
 
 
-/* ----------- Disco Styles ----------- */
-
-/* Div Gradients  */
-
-.blue {
-    background: radial-gradient(#b4f8fa, #1170FF);
-}
-
-.pink {
-    background: radial-gradient(#f4cef5, #fa34cf);
-}
-
-.orange {
-    background: radial-gradient(#fffce6, #FFBC11);
-}
-
-.red {
-    background: radial-gradient(#ffedeb, #fc4c14);
-}
-
-.green {
-    background: radial-gradient(#f0ffde, #52fc14);
-}
-
-.purple {
-    background: radial-gradient(#ecdbff, #c342ff);
-}
-
-.rainbow {
-    background: radial-gradient(#e3fffd, #2effcb);
-}
-
-
 /* ----------- Versus Display ----------- */
 
 #versus {
@@ -186,4 +153,72 @@ div {
     padding-left: 10px;
     width: 40%;
     height: 400px;
+}
+
+
+/* ----------- Disco Styles ----------- */
+
+/* Div Gradients  */
+
+.blue {
+    background: radial-gradient(#b4f8fa, #1170FF);
+}
+
+.pink {
+    background: radial-gradient(#f4cef5, #fa34cf);
+}
+
+.orange {
+    background: radial-gradient(#fffce6, #FFBC11);
+}
+
+.red {
+    background: radial-gradient(#ffedeb, #fc4c14);
+}
+
+.green {
+    background: radial-gradient(#f0ffde, #52fc14);
+}
+
+.purple {
+    background: radial-gradient(#ecdbff, #c342ff);
+}
+
+.rainbow {
+    background: radial-gradient(#e3fffd, #2effcb);
+}
+
+
+/* ----------- Animations ----------- */
+
+div[animation-id="animation-1"] {
+    animation-name: dance;
+    animation-duration: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+div[animation-id="animation-2"]{
+    animation-name: dance;
+    animation-duration: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes dance {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
