@@ -7,11 +7,13 @@ const vsLeft = document.getElementById('vs-left');
 const vsRight = document.getElementById('vs-right');
 const vsBtn = document.getElementById('vs-btn');
 const bracket = document.getElementById('bracket');
-const nameStat = document.querySelector('.stats-name')
-const habitatStat = document.querySelector('.stats-habitat')
-const dietStat = document.querySelector('.stats-diet')
-const moveStat = document.querySelector('.stats-dancemove')
-const danceMoves = ['Boogie', 'Hustle', 'Tango', 'Waltz', 'Stomp', '2-Step', 'Shuffle', 'Get-Down', 'Wiggle', 'Shake', 'Swim', 'Split', 'Trot', 'Hop']
+
+const statsList = document.querySelector('.stats');
+const nameStat = document.querySelector('.stats-name');
+const habitatStat = document.querySelector('.stats-habitat');
+const dietStat = document.querySelector('.stats-diet');
+const moveStat = document.querySelector('.stats-dancemove');
+const danceMoves = ['Boogie', 'Hustle', 'Tango', 'Waltz', 'Stomp', '2-Step', 'Shuffle', 'Get-Down', 'Wiggle', 'Shake', 'Swim', 'Split', 'Trot', 'Hop'];
 
 const div1 = document.getElementById('div-1');
 const div2 = document.getElementById('div-2');
@@ -61,6 +63,7 @@ startBtn.addEventListener('click', () => {
     } else if (startBtn.innerText === 'Click to Start Round 1') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
+        statsList.style.display = 'none';
         vsLeft.style.display = 'block';
         vsRight.style.display = 'block';
         vsLeft.src = animal1.image_link;
@@ -70,12 +73,14 @@ startBtn.addEventListener('click', () => {
     } else if (startBtn.innerText === 'Click to Start Round 2') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
+        statsList.style.display = 'none';
         vsLeft.src = quartersWinner1.image_link;
         vsRight.src = quartersWinner2.image_link;
         vsBtn.disabled = true;
     } else if (startBtn.innerText === 'Click to Start Championship Round!') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
+        statsList.style.display = 'none';
         vsLeft.src = semisWinner1.image_link;
         vsRight.src = semisWinner2.image_link;
         vsBtn.innerText = 'Choose Champion!';
@@ -300,6 +305,7 @@ vsRight.addEventListener('mouseover', showStats2)
 
 //show stats handler
 function showStats1() {
+    statsList.style.display = 'block';
     if (game === 1) {
         nameStat.innerText = `Name: ${animal1.name}`
         habitatStat.innerText = `Habitat: ${animal1.habitat}`
@@ -346,6 +352,7 @@ function showStats1() {
 }
 
 function showStats2() {
+    statsList.style.display = 'block';
     if (game === 1) {
         nameStat.innerText = `Name: ${animal2.name}`
         habitatStat.innerText = `Habitat: ${animal2.habitat}`
