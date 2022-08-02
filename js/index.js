@@ -7,6 +7,9 @@ const vsLeft = document.getElementById('vs-left');
 const vsRight = document.getElementById('vs-right');
 const vsBtn = document.getElementById('vs-btn');
 const bracket = document.getElementById('bracket');
+const nameStat = document.querySelector('.stats-name')
+const habitatStat = document.querySelector('.stats-habitat')
+const dietStat = document.querySelector('.stats-diet')
 
 const div9 = document.getElementById('div-9');
 const div10 = document.getElementById('div-10');
@@ -128,7 +131,6 @@ vsBtn.addEventListener('click', () => {
     vsLeft.style.opacity = '1';
     vsRight.style.opacity = '1';
 
-
     if (game === 2) {
         vsLeft.src = animal3.image_link;
         vsRight.src = animal4.image_link;
@@ -171,9 +173,6 @@ vsBtn.addEventListener('click', () => {
         startBtn.innerText = 'Click to Start Round 1';
     }
 })
-
-
-// ---------- Start Round Functions ----------
 
 function setupR1() {
     fetch('https://zoo-animal-api.herokuapp.com/animals/rand/8')
@@ -235,30 +234,110 @@ function assignDancer(dancer) {
 
 
 
+// ---------- Show Stats ----------
 
+//show stats event listeners
+vsLeft.addEventListener('mouseover', showStats1)
+vsRight.addEventListener('mouseover', showStats2)
 
+//show stats handler
+function showStats1() {
+    if (game === 1) {
+        nameStat.innerText = `Name: ${animal1.name}`
+        habitatStat.innerText = `Habitat: ${animal1.habitat}`
+        dietStat.innerText = `Diet: ${animal1.diet}`  
+    }
+    else if (game === 2) {
+        nameStat.innerText = `Name: ${animal3.name}`
+        habitatStat.innerText = `Habitat: ${animal3.habitat}`
+        dietStat.innerText = `Diet: ${animal3.diet}`
+    }
+    else if (game === 3) {
+        nameStat.innerText = `Name: ${animal5.name}`
+        habitatStat.innerText = `Habitat: ${animal5.habitat}`
+        dietStat.innerText = `Diet: ${animal5.diet}`
+    }
+    else if (game === 4) {
+        nameStat.innerText = `Name: ${animal7.name}`
+        habitatStat.innerText = `Habitat: ${animal7.habitat}`
+        dietStat.innerText = `Diet: ${animal7.diet}`
+    }
+    else if (game === 5) {
+        nameStat.innerText = `Name: ${quartersWinner1.name}`
+        habitatStat.innerText = `Habitat: ${quartersWinner1.habitat}`
+        dietStat.innerText = `Diet: ${quartersWinner1.diet}`
+    }
+    else if (game === 6) {
+        nameStat.innerText = `Name: ${quartersWinner3.name}`
+        habitatStat.innerText = `Habitat: ${quartersWinner3.habitat}`
+        dietStat.innerText = `Diet: ${quartersWinner3.diet}`
+    }
+    else if (game === 7) {
+        nameStat.innerText = `Name: ${semisWinner1.name}`
+        habitatStat.innerText = `Habitat: ${semisWinner1.habitat}`
+        dietStat.innerText = `Diet: ${semisWinner1.diet}`
+    }
+}
 
-//round 1 handlers
-function assignWinner1(e) {
-    quartersWinner1 = e.target.src
+function showStats2() {
+    if (game === 1) {
+        nameStat.innerText = `Name: ${animal2.name}`
+        habitatStat.innerText = `Habitat: ${animal2.habitat}`
+        dietStat.innerText = `Diet: ${animal2.diet}`  
+    }
+    else if (game === 2) {
+        nameStat.innerText = `Name: ${animal4.name}`
+        habitatStat.innerText = `Habitat: ${animal4.habitat}`
+        dietStat.innerText = `Diet: ${animal4.diet}`
+    }
+    else if (game === 3) {
+        nameStat.innerText = `Name: ${animal6.name}`
+        habitatStat.innerText = `Habitat: ${animal6.habitat}`
+        dietStat.innerText = `Diet: ${animal6.diet}`
+    }
+    else if (game === 4) {
+        nameStat.innerText = `Name: ${animal8.name}`
+        habitatStat.innerText = `Habitat: ${animal8.habitat}`
+        dietStat.innerText = `Diet: ${animal8.diet}`
+    }
+    else if (game === 5) {
+        nameStat.innerText = `Name: ${quartersWinner2.name}`
+        habitatStat.innerText = `Habitat: ${quartersWinner2.habitat}`
+        dietStat.innerText = `Diet: ${quartersWinner2.diet}`
+    }
+    else if (game === 6) {
+        nameStat.innerText = `Name: ${quartersWinner4.name}`
+        habitatStat.innerText = `Habitat: ${quartersWinner4.habitat}`
+        dietStat.innerText = `Diet: ${quartersWinner4.diet}`
+    }
+    else if (game === 7) {
+        nameStat.innerText = `Name: ${semisWinner2.name}`
+        habitatStat.innerText = `Habitat: ${semisWinner2.habitat}`
+        dietStat.innerText = `Diet: ${semisWinner2.diet}`
+    }
 }
-function assignWinner2(e) {
-    quartersWinner2 = e.target.src
-}
-function assignWinner3(e) {
-    quartersWinner3 = e.target.src
-}
-function assignWinner4(e) {
-    quartersWinner4 = e.target.src
-}
-// round 2 handlers
-function assignWinner5(e) {
-    semisWinner1 = e.target.src
-}
-function assignWinner6(e) {
-    semisWinner2 = e.target.src
-}
-//round 3 handler
-function assignWinner6(e) {
-    champ = e.target.src
-}
+
+// //round 1 handlers
+// function assignWinner1(e) {
+//     quartersWinner1 = e.target.src
+// }
+// function assignWinner2(e) {
+//     quartersWinner2 = e.target.src
+// }
+// function assignWinner3(e) {
+//     quartersWinner3 = e.target.src
+// }
+// function assignWinner4(e) {
+//     quartersWinner4 = e.target.src
+// }
+// // round 2 handlers
+// function assignWinner5(e) {
+//     semisWinner1 = e.target.src
+// }
+// function assignWinner6(e) {
+//     semisWinner2 = e.target.src
+// }
+// //round 3 handler
+// function assignWinner6(e) {
+//     champ = e.target.src
+// }
