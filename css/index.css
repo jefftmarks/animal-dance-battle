@@ -211,7 +211,7 @@ div[animation-id="animation-2"]{
 
 #vs-left {
     animation-name: dance-2;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -245,8 +245,14 @@ div[animation-id="animation-2"]{
     0% {
         transform: skew(0deg);
     }
-    50% {
+    25% {
         transform: skew(0.5deg);
+    }
+    50% {
+        transform: skew(0deg);
+    }
+    75% {
+        transform: skew(-0.5deg);
     }
     100% {
         transform: skew(0deg);

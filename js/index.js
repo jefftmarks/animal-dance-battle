@@ -68,6 +68,8 @@ startBtn.addEventListener('click', () => {
         vsRight.style.display = 'block';
         vsLeft.src = animal1.image_link;
         vsRight.src = animal2.image_link;
+        vsLeft.style.animationName = 'dance-2'
+        vsRight.style.animationName = 'dance-3'
     } else if (startBtn.innerText === 'Click to Start Round 2') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
@@ -87,8 +89,6 @@ startBtn.addEventListener('click', () => {
 
 // Left
 vsLeft.addEventListener('click', () => {
-    vsLeft.style.border = '3px solid #40f022';
-    vsRight.style.border = '';
     vsLeft.style.opacity = '1';
     vsRight.style.opacity = '0.2';
     ready = true;
@@ -119,8 +119,6 @@ vsLeft.addEventListener('click', () => {
 
 // Right
 vsRight.addEventListener('click', () => {
-    vsRight.style.border = '3px solid #40f022';
-    vsLeft.style.border = '';
     vsRight.style.opacity = '1';
     vsLeft.style.opacity = '0.2';
     ready = true;
@@ -155,8 +153,6 @@ document.addEventListener('keydown', (e) => {
         if ((vsDisplay.style.display = 'block' && ready === true) || (game === 8)) {
             game++;
             ready = false
-            vsLeft.style.border = '';
-            vsRight.style.border = '';
             vsLeft.style.opacity = '1';
             vsRight.style.opacity = '1';
             matchInstructions.innerText = "Hover over each animal to display its stats! Click which animal you think will win the dance contest."
@@ -186,9 +182,11 @@ document.addEventListener('keydown', (e) => {
             } else if (game === 8) {
                 if (champ === semisWinner1) {
                     vsRight.style.display = 'none';
+                    vsLeft.style.animationName = 'dance-4'
                     matchInstructions.innerText = 'Press Enter to play again!';
                 } else if (champ === semisWinner2) {
                     vsLeft.style.display = 'none';
+                    vsRight.style.animationName = 'dance-4'
                     matchInstructions.innerText = 'Press Enter to play again!';
                 }
             } else if (game === 9) {
