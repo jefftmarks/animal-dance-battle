@@ -51,22 +51,18 @@ div {
     border-radius: 50px;
 }
 
-#bracket {
-    width: 90%;
-    height: 100vh;
-    margin: auto;
-}
-
 .round {
-    width: 100%;
-    height: 25%;
+    width: 90%;
+    min-width: 1000px;
+    height: 250px;
     display: flex;
     justify-content: space-between;
+    margin: auto;
     margin-bottom: 20px;
 }
 
 .r1-game {
-    width: 21%;
+    width: 22.6%;
     height: 100%;
     float: left;
     display: flex;
@@ -91,7 +87,7 @@ div {
 
 .r1-team {
     border-radius: 50px;
-    width: 44%;
+    width: 48%;
     height: 100%;
     float: left;
 }
