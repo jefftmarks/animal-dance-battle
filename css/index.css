@@ -124,14 +124,15 @@ div {
 #vs-container {
     margin: auto;
     width: 90%;
-    height: 400px;
+    height: auto;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .vs-dancer {
-    width: auto;
-    height: 100%;
+    width: 40%;
+    max-height: 500px;
     object-fit: contain;
     display: flex;
     justify-content: space-evenly;
@@ -195,20 +196,34 @@ li {
 /* ----------- Animations ----------- */
 
 div[animation-id="animation-1"] {
-    animation-name: dance;
+    animation-name: dance-1;
     animation-duration: 0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
 div[animation-id="animation-2"]{
-    animation-name: dance;
+    animation-name: dance-1;
     animation-duration: 0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
-@keyframes dance {
+#vs-left {
+    animation-name: dance-2;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#vs-right {
+    animation-name: dance-3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes dance-1 {
     0% {
         transform: rotate(0deg);
     }
@@ -223,5 +238,47 @@ div[animation-id="animation-2"]{
     }
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes dance-2 {
+    0% {
+        transform: skew(0deg);
+    }
+    50% {
+        transform: skew(0.5deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+@keyframes dance-3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dance-4 {
+    0% {
+        transform: translate(0px);
+    }
+    25% {
+        transform: translate(5px);
+    }
+    50% {
+        transform: translate(0);
+    }
+    75% {
+        transform: translate(-5px);
+    }
+    100% {
+        transform: translate(0);
     }
 }
