@@ -36,11 +36,8 @@ const div14 = document.getElementById('div-14');
 let ready = true;
 let counter = 1;
 let game = 1;
-<<<<<<< HEAD
 let round = 0;
-=======
 statsOn = false;
->>>>>>> Zak
 
 let quartersWinner1;
 let quartersWinner2;
@@ -152,7 +149,7 @@ document.addEventListener('keydown', (e) => {
             vsRight.style.display = 'block';
             statsContainer.style.display = 'none';
             statsList.style.display = 'none';
-            matchInstructions.innerText = "Click an animal to display its stats!"
+            matchInstructions.innerText = "Click an Animal to show/hide its stats!"
 
             if (game === 2) {
                 vsLeft.src = animal3.image_link;
@@ -419,7 +416,7 @@ if (statsOn === false) {
     statsOn = true;
 }
 else if (statsOn === true) {
-    matchInstructions.innerText = "Click an animal to display its stats!"
+    matchInstructions.innerText = "Click an Animal to show/hide its stats!"
     vsRight.style.display = 'block';
     statsContainer.style.display = 'none';
     statsOn = false;
@@ -441,7 +438,7 @@ function displayStatsR() {
         statsOn = true;
     }
     else if (statsOn === true) {
-        matchInstructions.innerText = "Click an animal to display its stats!"
+        matchInstructions.innerText = "Click an Animal to show/hide its stats!"
         vsLeft.style.display = 'block';
         statsContainer.style.display = 'none';
         statsOn = false;
