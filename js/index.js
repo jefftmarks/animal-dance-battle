@@ -1,6 +1,7 @@
 // ---------- Global Variables ----------
 
 const startBtn = document.getElementById('start-btn');
+const discoText = document.getElementById('disco-text');
 const tournamentDisplay = document.getElementById('tournament');
 const vsDisplay = document.getElementById('versus');
 const vsLeft = document.getElementById('vs-left');
@@ -57,7 +58,7 @@ let animal8 = {};
 
 // Start Button to Launch Rounds
 startBtn.addEventListener('click', () => {
-    if (startBtn.innerText === 'Click to Start Tournament') {
+    if (startBtn.innerText === 'Meet Our Dancers!') {
         setupR1();
         startBtn.innerText = 'Click to Start Round 1';
     } else if (startBtn.innerText === 'Click to Start Round 1') {
