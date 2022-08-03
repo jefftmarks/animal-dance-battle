@@ -63,7 +63,7 @@ let animal8 = {};
 startBtn.addEventListener('click', () => {
     if (round === 0) {
         setupR1();
-        instructionText.innerText = 'Let the tournament begin!\nClick to the disco ball to start Round One';
+        instructionText.innerText = 'Let the tournament begin!\nClick the disco ball to start Round One';
         round++;
     } else if (round === 1) {
         tournamentDisplay.style.display = 'none';
@@ -208,7 +208,7 @@ document.addEventListener('keydown', (e) => {
                 counter = 1;
                 resetBracket();
                 setupR1();
-                instructionText.innerText = 'Click to start Round 1';
+                instructionText.innerText = 'New dancers have entered the arena!\nClick the disco ball to start Round One';
             }
         }
     }
