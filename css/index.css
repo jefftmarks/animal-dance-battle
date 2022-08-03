@@ -13,13 +13,27 @@ body {
 
 .game-btn {
     width: 250px;
-    height: auto;
-    padding: 10px;
-    font-size: 18px;
-    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
-    color: black;
-    border: 3px solid black;
-    border-radius: 20px;
+    height: 250px;
+    border-radius: 50%;
+    border-style: none;
+    filter: drop-shadow(2px 2px 10px black);
+    cursor: pointer;
+
+    background-image: url("../images/disco-ball.gif");
+    background-position: 50% 80%;
+    background-size: 292px;
+}
+
+.game-btn p {
+    margin-top: 30px;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 75px;
+    line-height: 60px;
+    background: -webkit-linear-gradient(#BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(3px 3px 3px black);
+
 }
 
 header {
@@ -42,8 +56,8 @@ div {
 /* Fonts */
 
 @font-face {
-    font-family: arcade;
-    src: url("../fonts/ARCADE.TTF");
+    font-family: malvie;
+    src: url("../fonts/MalvieTrial.otf");
 }
 
 @font-face {
@@ -55,16 +69,23 @@ div {
 
 #tournament {
     display: block;
-    padding-bottom: 20px;
+    width: 95%;
+    min-width: 1000px;
+    margin: auto;
+    margin-top: -40px;
 }
 
 
 /* Tournament Instructions */
 
 .tournament-instructions {
-    margin-top: 40px;
     margin-bottom: 50px;
     text-align: center;
+}
+
+.tournament-instructions h3 {
+    font-family: sans-serif;
+    font-size: 30px;
 }
 
 /* Bracket */
@@ -76,12 +97,13 @@ div {
     border-radius: 50px;
 }
 
+.r1-team, .r2-team, .r3-team, #champ {
+    filter: drop-shadow(1px 1px 7px black);
+}
+
 .round {
-    width: 95%;
-    min-width: 1000px;
     display: flex;
     justify-content: space-between;
-    margin: auto;
     margin-bottom: 20px;
 }
 

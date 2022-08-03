@@ -1,6 +1,7 @@
 // ---------- Global Variables ----------
 
 const startBtn = document.getElementById('start-btn');
+const discoText = document.getElementById('disco-text');
 const tournamentDisplay = document.getElementById('tournament');
 const vsDisplay = document.getElementById('versus');
 const vsLeft = document.getElementById('vs-left');
@@ -57,10 +58,10 @@ let animal8 = {};
 
 // Start Button to Launch Rounds
 startBtn.addEventListener('click', () => {
-    if (startBtn.innerText === 'Click to Start Tournament') {
+    if (discoText.innerText === 'Meet Our Dancers!') {
         setupR1();
-        startBtn.innerText = 'Click to Start Round 1';
-    } else if (startBtn.innerText === 'Click to Start Round 1') {
+        discoText.innerText = 'Click to Start Round 1';
+    } else if (discoText.innerText === 'Click to Start Round 1') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
@@ -70,13 +71,13 @@ startBtn.addEventListener('click', () => {
         vsRight.src = animal2.image_link;
         vsLeft.style.animationName = 'dance-2'
         vsRight.style.animationName = 'dance-3'
-    } else if (startBtn.innerText === 'Click to Start Round 2') {
+    } else if (discoText.innerText === 'Click to Start Round 2') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
         vsLeft.src = quartersWinner1.image_link;
         vsRight.src = quartersWinner2.image_link;
-    } else if (startBtn.innerText === 'Click to Start Championship Round!') {
+    } else if (discoText.innerText === 'Click to Start Championship Round!') {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
@@ -172,7 +173,7 @@ document.addEventListener('keydown', (e) => {
             } else if (game === 5) {
                 tournamentDisplay.style.display = 'block';
                 vsDisplay.style.display = 'none';
-                startBtn.innerText = 'Click to Start Round 2';
+                discoText.innerText = 'Click to Start Round 2';
                 startR2();
             } else if (game === 6) {
                 vsLeft.src = quartersWinner3.image_link;
@@ -180,7 +181,7 @@ document.addEventListener('keydown', (e) => {
             } else if (game === 7) {
                 tournamentDisplay.style.display = 'block';
                 vsDisplay.style.display = 'none';
-                startBtn.innerText = 'Click to Start Championship Round!';
+                discoText.innerText = 'Click to Start Championship Round!';
                 startR3();
             } else if (game === 8) {
                 if (champ === semisWinner1) {
@@ -199,7 +200,7 @@ document.addEventListener('keydown', (e) => {
                 counter = 1;
                 resetBracket();
                 setupR1();
-                startBtn.innerText = 'Click to Start Round 1';
+                discoText.innerText = 'Click to Start Round 1';
             }
         }
     }
