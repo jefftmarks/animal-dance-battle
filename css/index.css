@@ -192,9 +192,8 @@ li {
    border-radius: 30px;
    margin: auto;
    padding: 20px;
-   width: 40%;
-   height: 400px;
-   margin-top: 50px;
+   width: auto;
+   height: 100%;
    display: none;
 }
 
