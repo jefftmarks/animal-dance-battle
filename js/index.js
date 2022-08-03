@@ -206,6 +206,7 @@ document.addEventListener('keydown', (e) => {
                 vsDisplay.style.display = 'none';
                 game = 1;
                 counter = 1;
+                round = 1;
                 resetBracket();
                 setupR1();
                 instructionText.innerText = 'New dancers have entered the arena!\nClick the disco ball to start Round One';
