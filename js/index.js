@@ -15,7 +15,7 @@ const nameStat = document.querySelector('.stats-name');
 const habitatStat = document.querySelector('.stats-habitat');
 const dietStat = document.querySelector('.stats-diet');
 const moveStat = document.querySelector('.stats-dancemove');
-const danceMoves = ['Boogie', 'Hustle', 'Tango', 'Waltz', 'Stomp', '2-Step', 'Shuffle', 'Get-Down', 'Wiggle', 'Shake', 'Swim', 'Split', 'Trot', 'Hop'];
+const danceMoves = ['Boogie', 'Hustle', 'Tango', 'Waltz', 'Stomp', '2-Step', 'Shuffle', 'Get-Down', 'Wiggle', 'Shake', 'Swim', 'Split', 'Trot', 'Hop', 'Twist', 'Shimmy', 'Salsa', 'Stroll', 'Mambo', 'Cha-Cha', 'Strut'];
 
 const div1 = document.getElementById('div-1');
 const div2 = document.getElementById('div-2');
@@ -467,7 +467,7 @@ function danceMoveGenerator(name, danceMove) {
     nameArray[0] = nameArray[0].toUpperCase();
     const titleCaseName = nameArray.join('');
 
-    return `${titleCaseName} ${danceMove[Math.floor(Math.random() * 13) + 1]}`
+    return `${titleCaseName} ${danceMove[Math.floor(Math.random() * 20) + 1]}`
 }
 
 function titleCase(str) {
