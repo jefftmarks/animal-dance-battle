@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-image: url("../images/disco-background.jpeg");
     background-size: cover;
+    background-color: black;
   }
 
 .game-btn {
@@ -56,13 +57,20 @@ div {
 }
 
 .round {
-    width: 90%;
+    width: 95%;
     min-width: 1000px;
-    height: 250px;
     display: flex;
     justify-content: space-between;
     margin: auto;
     margin-bottom: 20px;
+}
+
+#round-1 {
+    height: 205px;
+}
+
+#round-2, #round-3, #round-4 {
+    height: 400px;
 }
 
 .r1-game {
