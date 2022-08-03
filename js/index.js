@@ -8,6 +8,7 @@ const vsLeft = document.getElementById('vs-left');
 const vsRight = document.getElementById('vs-right');
 const matchInstructions = document.querySelector('#vs-instructions h3')
 const bracket = document.getElementById('bracket');
+const statsContainer = document.querySelector('#stats-container')
 
 const statsList = document.querySelector('.stats');
 const nameStat = document.querySelector('.stats-name');
@@ -35,6 +36,7 @@ const div14 = document.getElementById('div-14');
 let ready = true;
 let counter = 1;
 let game = 1;
+statsOn = false;
 
 let quartersWinner1;
 let quartersWinner2;
@@ -90,17 +92,9 @@ startBtn.addEventListener('click', () => {
 
 // Left
 vsLeft.addEventListener('click', () => {
-    vsLeft.style.opacity = '1';
-    vsRight.style.opacity = '0.2';
+    displayStatsL();
     statsList.style.display = 'block';
     ready = true;
-    if (game < 8) {
-        if(game === 7) {
-            matchInstructions.innerText = "Press Enter to Choose the Champion!"
-        }
-        else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
-        }
-    }
 
     if (game === 1) {
         quartersWinner1 = animal1;
@@ -121,17 +115,10 @@ vsLeft.addEventListener('click', () => {
 
 // Right
 vsRight.addEventListener('click', () => {
-    vsRight.style.opacity = '1';
-    vsLeft.style.opacity = '0.2';
+    displayStatsR();
     statsList.style.display = 'block';
     ready = true;
-    if (game < 8) {
-        if(game === 7) {
-            matchInstructions.innerText = "Press Enter to Choose the Champion!"
-        }
-        else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
-        }
-    }
+    
 
     if (game === 1) {
         quartersWinner1 = animal2;
@@ -153,13 +140,14 @@ vsRight.addEventListener('click', () => {
 // Submit Winner and Trigger Next Game
 document.addEventListener('keydown', (e) => {
     if (e.key === "Enter") {
-        if ((vsDisplay.style.display = 'block' && ready === true) || (game === 8)) {
+        if ((vsDisplay.style.display = 'block' && statsOn === true) || (game === 8)) {
             game++;
-            ready = false
-            vsLeft.style.opacity = '1';
-            vsRight.style.opacity = '1';
+            statsOn = false
+            vsLeft.style.display = 'block';
+            vsRight.style.display = 'block';
+            statsContainer.style.display = 'none';
             statsList.style.display = 'none';
-            matchInstructions.innerText = "Hover over each animal to display its stats! Click which animal you think will win the dance contest."
+            matchInstructions.innerText = "Click an animal to display its stats!"
 
             if (game === 2) {
                 vsLeft.src = animal3.image_link;
@@ -313,23 +301,8 @@ function resetBracket() {
 
 // ---------- Show Stats ----------
 
-//show stats event listeners
-vsLeft.addEventListener('mouseover', () => {
-    showStats1();
-    vsRight.style.display = 'none';
-    document.querySelector('#stats-container').style.display = 'block'})
-vsLeft.addEventListener('mouseleave', () => {
-    vsRight.style.display = 'block';
-    document.querySelector('#stats-container').style.display = 'none'})
-vsRight.addEventListener('mouseover', () => {
-    showStats2();
-    vsLeft.style.display = 'none';
-    document.querySelector('#stats-container').style.display = 'block'})
-vsRight.addEventListener('mouseleave', () => {
-    vsLeft.style.display = 'block';
-    document.querySelector('#stats-container').style.display = 'none'})
 
-//show stats handler
+//show animal stats
 function showStats1() {
     statsList.style.display = 'block';
     if (game === 1) {
@@ -420,6 +393,51 @@ function showStats2() {
         habitatStat.innerText = `Habitat: ${semisWinner2.habitat}`
         dietStat.innerText = `Diet: ${semisWinner2.diet}`
         moveStat.innerText = `Signature Dance Move: ${semisWinner2.sigDanceMove}`
+    }
+}
+//toggle stats display
+
+function displayStatsL() {
+if (statsOn === false) {
+    showStats1();
+    vsRight.style.display = 'none';
+    statsContainer.style.display = 'block';
+    if (game < 8) {
+        if(game === 7) {
+            matchInstructions.innerText = "Press Enter to Choose the Champion!"
+        }
+        else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
+        }
+    }
+    statsOn = true;
+}
+else if (statsOn === true) {
+    matchInstructions.innerText = "Click an animal to display its stats!"
+    vsRight.style.display = 'block';
+    statsContainer.style.display = 'none';
+    statsOn = false;
+}
+}
+
+function displayStatsR() {
+    if (statsOn === false) {
+        showStats2();
+        vsLeft.style.display = 'none';
+        statsContainer.style.display = 'block';
+        if (game < 8) {
+            if(game === 7) {
+                matchInstructions.innerText = "Press Enter to Choose the Champion!"
+            }
+            else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
+            }
+        }
+        statsOn = true;
+    }
+    else if (statsOn === true) {
+        matchInstructions.innerText = "Click an animal to display its stats!"
+        vsLeft.style.display = 'block';
+        statsContainer.style.display = 'none';
+        statsOn = false;
     }
 }
 
