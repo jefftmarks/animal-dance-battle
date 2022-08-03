@@ -16,11 +16,14 @@ body {
     height: 200px;
     border-radius: 50%;
     border-style: none;
-    filter: drop-shadow(2px 2px 10px #163366);
     cursor: pointer;
     background-image: url("../images/disco-ball.gif");
     background-position: 50% 82%;
     background-size: 235px;
+}
+
+.game-btn:hover {
+    box-shadow: 0px 0px 20px 2px #a9c0eb;
 }
 
 /* .game-btn p {
@@ -175,6 +178,7 @@ div {
 #versus {
     display: none;
     padding-bottom: 50px;
+    margin-top: -38px;
 }
 
 #vs-container {
@@ -198,8 +202,14 @@ div {
 
 #vs-instructions {
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
+}
+
+#vs-instructions h3 {
+    font-family: prompt;
+    font-size: 30px;
+    margin-bottom: 28px;
 }
 
 /* Stats */
