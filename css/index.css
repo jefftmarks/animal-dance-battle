@@ -6,35 +6,37 @@
 
 body {
     margin: 0;
-    background-image: url("../images/disco-background.jpeg");
-    background-size: cover;
-    background-color: black;
+    background: linear-gradient(90deg, #0a275d, #3663b5);
+    /* background-image: url("../images/disco-background.jpeg");
+    background-size: cover; */
   }
 
 .game-btn {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border-style: none;
-    filter: drop-shadow(2px 2px 10px black);
     cursor: pointer;
-
     background-image: url("../images/disco-ball.gif");
-    background-position: 50% 80%;
-    background-size: 292px;
+    background-position: 50% 82%;
+    background-size: 235px;
 }
 
-.game-btn p {
-    margin-top: 30px;
+.game-btn:hover {
+    box-shadow: 0px 0px 20px 2px #a9c0eb;
+}
+
+/* .game-btn p {
+    margin-top: 20px;
     font-family: 'Brush Script MT', cursive;
-    font-size: 75px;
-    line-height: 60px;
-    background: -webkit-linear-gradient(#BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    font-size: 60px;
+    line-height: 50px;
+    background: -webkit-linear-gradient(-45deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(3px 3px 3px black);
 
-}
+} */
 
 header {
     width: 95%;
@@ -46,7 +48,7 @@ h1 {
     text-align: center;
     color: white;
     font-family: discoDiva, sans-serif;
-    font-size: 100px;
+    font-size: 6vw;
 }
 
 div {
@@ -56,8 +58,8 @@ div {
 /* Fonts */
 
 @font-face {
-    font-family: malvie;
-    src: url("../fonts/MalvieTrial.otf");
+    font-family: prompt;
+    src: url("../fonts/Prompt/Prompt-Thin.ttf");
 }
 
 @font-face {
@@ -72,20 +74,21 @@ div {
     width: 95%;
     min-width: 1000px;
     margin: auto;
-    margin-top: -40px;
+    margin-top: -38px;
 }
 
 
 /* Tournament Instructions */
 
 .tournament-instructions {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .tournament-instructions h3 {
-    font-family: sans-serif;
-    font-size: 30px;
+    font-family: prompt;
+    font-size: 38px;
+    margin-bottom: 28px;
 }
 
 /* Bracket */
@@ -98,7 +101,7 @@ div {
 }
 
 .r1-team, .r2-team, .r3-team, #champ {
-    filter: drop-shadow(1px 1px 7px black);
+    filter: drop-shadow(1px 1px 7px #163366);
 }
 
 .round {
@@ -175,6 +178,7 @@ div {
 #versus {
     display: none;
     padding-bottom: 50px;
+    margin-top: -38px;
 }
 
 #vs-container {
@@ -198,8 +202,14 @@ div {
 
 #vs-instructions {
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
+}
+
+#vs-instructions h3 {
+    font-family: prompt;
+    font-size: 30px;
+    margin-bottom: 28px;
 }
 
 /* Stats */
