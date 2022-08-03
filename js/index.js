@@ -313,8 +313,20 @@ function resetBracket() {
 // ---------- Show Stats ----------
 
 //show stats event listeners
-vsLeft.addEventListener('mouseover', showStats1)
-vsRight.addEventListener('mouseover', showStats2)
+vsLeft.addEventListener('mouseover', () => {
+    showStats1();
+    vsRight.style.display = 'none';
+    document.querySelector('#stats-container').style.display = 'block'})
+vsLeft.addEventListener('mouseleave', () => {
+    vsRight.style.display = 'block';
+    document.querySelector('#stats-container').style.display = 'none'})
+vsRight.addEventListener('mouseover', () => {
+    showStats2();
+    vsLeft.style.display = 'none';
+    document.querySelector('#stats-container').style.display = 'block'})
+vsRight.addEventListener('mouseleave', () => {
+    vsLeft.style.display = 'block';
+    document.querySelector('#stats-container').style.display = 'none'})
 
 //show stats handler
 function showStats1() {

@@ -195,12 +195,14 @@ li {
    width: 40%;
    height: 400px;
    margin-top: 50px;
+   display: none;
 }
 
 #stats-container h3 {
     font-size: 30px;
     text-decoration: underline;
 }
+
 
 /* ----------- Disco Styles ----------- */
 
