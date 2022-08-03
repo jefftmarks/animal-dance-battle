@@ -198,6 +198,15 @@ div {
     justify-content: space-evenly;
 }
 
+#dancing-gifs {
+    display: none;
+    object-fit: contain;
+    justify-content: space-evenly;
+    height: 100px;
+    flex-direction: row;
+    width: 100%;
+}
+
 /* Versus Instructions */
 
 #vs-instructions {

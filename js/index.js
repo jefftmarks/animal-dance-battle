@@ -94,48 +94,49 @@ startBtn.addEventListener('click', () => {
 
 // Left
 vsLeft.addEventListener('click', () => {
-    displayStatsL();
-    statsList.style.display = 'block';
-    ready = true;
-
-    if (game === 1) {
-        quartersWinner1 = animal1;
-    } else if (game === 2) {
-        quartersWinner2 = animal3;
-    } else if (game === 3) {
-        quartersWinner3 = animal5;
-    } else if (game === 4) {
-        quartersWinner4 = animal7;
-    } else if (game === 5) {
-        semisWinner1 = quartersWinner1;
-    } else if (game === 6) {
-        semisWinner2 = quartersWinner3;
-    } else if (game === 7) {
-        champ = semisWinner1;
+    if (game!== 8) {
+        displayStatsL();
+        statsList.style.display = 'block';
+        ready = true;
+        if (game === 1) {
+            quartersWinner1 = animal1;
+        } else if (game === 2) {
+            quartersWinner2 = animal3;
+        } else if (game === 3) {
+            quartersWinner3 = animal5;
+        } else if (game === 4) {
+            quartersWinner4 = animal7;
+        } else if (game === 5) {
+            semisWinner1 = quartersWinner1;
+        } else if (game === 6) {
+            semisWinner2 = quartersWinner3;
+        } else if (game === 7) {
+            champ = semisWinner1;
+        }
     }
 })
 
 // Right
 vsRight.addEventListener('click', () => {
-    displayStatsR();
-    statsList.style.display = 'block';
-    ready = true;
-    
-
-    if (game === 1) {
-        quartersWinner1 = animal2;
-    } else if (game === 2) {
-        quartersWinner2 = animal4;
-    } else if (game === 3) {
-        quartersWinner3 = animal6;
-    } else if (game === 4) {
-        quartersWinner4 = animal8;
-    } else if (game === 5) {
-        semisWinner1 = quartersWinner2;
-    } else if (game === 6) {
-        semisWinner2 = quartersWinner4;
-    } else if (game === 7) {
-        champ = semisWinner2;
+    if (game !== 8) {
+        displayStatsR();
+        statsList.style.display = 'block';
+        ready = true;
+        if (game === 1) {
+            quartersWinner1 = animal2;
+        } else if (game === 2) {
+            quartersWinner2 = animal4;
+        } else if (game === 3) {
+            quartersWinner3 = animal6;
+        } else if (game === 4) {
+            quartersWinner4 = animal8;
+        } else if (game === 5) {
+            semisWinner1 = quartersWinner2;
+        } else if (game === 6) {
+            semisWinner2 = quartersWinner4;
+        } else if (game === 7) {
+            champ = semisWinner2;
+        }
     }
 })
 
@@ -176,14 +177,15 @@ document.addEventListener('keydown', (e) => {
                 startR3();
                 round++;
             } else if (game === 8) {
+                document.getElementById('dancing-gifs').style.display = 'inline-flex';
                 if (champ === semisWinner1) {
                     vsRight.style.display = 'none';
                     vsLeft.style.animationName = 'dance-4'
-                    matchInstructions.innerText = 'Press Enter to play again!';
+                    matchInstructions.innerText = 'Gaze upon your CHAMPION!\nPress Enter to play again!';
                 } else if (champ === semisWinner2) {
                     vsLeft.style.display = 'none';
                     vsRight.style.animationName = 'dance-4'
-                    matchInstructions.innerText = 'Press Enter to play again!';
+                    matchInstructions.innerText = 'Gaze upon your CHAMPION!\nPress Enter to play again!';
                 }
             } else if (game === 9) {
                 tournamentDisplay.style.display = 'block';
