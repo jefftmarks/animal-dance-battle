@@ -1,7 +1,7 @@
 // ---------- Global Variables ----------
 
 const startBtn = document.getElementById('start-btn');
-const discoText = document.getElementById('disco-text');
+const instructionText = document.getElementById('instruction-text');
 const tournamentDisplay = document.getElementById('tournament');
 const vsDisplay = document.getElementById('versus');
 const vsLeft = document.getElementById('vs-left');
@@ -35,6 +35,7 @@ const div14 = document.getElementById('div-14');
 let ready = true;
 let counter = 1;
 let game = 1;
+let round = 0;
 
 let quartersWinner1;
 let quartersWinner2;
@@ -58,10 +59,11 @@ let animal8 = {};
 
 // Start Button to Launch Rounds
 startBtn.addEventListener('click', () => {
-    if (discoText.innerText === 'Meet Our Dancers!') {
+    if (round === 0) {
         setupR1();
-        discoText.innerText = 'Click to Start Round 1';
-    } else if (discoText.innerText === 'Click to Start Round 1') {
+        instructionText.innerText = 'Let the tournament begin!\nClick to the disco ball to start Round One';
+        round++;
+    } else if (round === 1) {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
@@ -71,13 +73,13 @@ startBtn.addEventListener('click', () => {
         vsRight.src = animal2.image_link;
         vsLeft.style.animationName = 'dance-2'
         vsRight.style.animationName = 'dance-3'
-    } else if (discoText.innerText === 'Click to Start Round 2') {
+    } else if (round === 2) {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
         vsLeft.src = quartersWinner1.image_link;
         vsRight.src = quartersWinner2.image_link;
-    } else if (discoText.innerText === 'Click to Start Championship Round!') {
+    } else if (round === 3) {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
         statsList.style.display = 'none';
@@ -173,16 +175,18 @@ document.addEventListener('keydown', (e) => {
             } else if (game === 5) {
                 tournamentDisplay.style.display = 'block';
                 vsDisplay.style.display = 'none';
-                discoText.innerText = 'Click to Start Round 2';
+                instructionText.innerText = 'The competition is stiff!\nClick the disco ball to start Round Two';
                 startR2();
+                round++;
             } else if (game === 6) {
                 vsLeft.src = quartersWinner3.image_link;
                 vsRight.src = quartersWinner4.image_link;
             } else if (game === 7) {
                 tournamentDisplay.style.display = 'block';
                 vsDisplay.style.display = 'none';
-                discoText.innerText = 'Click to Start Championship Round!';
+                instructionText.innerText = 'We\'re down to the final two!\nClick the disco ball to start the Final Round';
                 startR3();
+                round++;
             } else if (game === 8) {
                 if (champ === semisWinner1) {
                     vsRight.style.display = 'none';
@@ -200,7 +204,7 @@ document.addEventListener('keydown', (e) => {
                 counter = 1;
                 resetBracket();
                 setupR1();
-                discoText.innerText = 'Click to Start Round 1';
+                instructionText.innerText = 'Click to Start Round 1';
             }
         }
     }
