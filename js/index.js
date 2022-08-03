@@ -73,8 +73,6 @@ startBtn.addEventListener('click', () => {
         vsRight.style.display = 'block';
         vsLeft.src = animal1.image_link;
         vsRight.src = animal2.image_link;
-        vsLeft.style.animationName = 'dance-2'
-        vsRight.style.animationName = 'dance-3'
     } else if (round === 2) {
         tournamentDisplay.style.display = 'none';
         vsDisplay.style.display = 'block';
@@ -139,6 +137,24 @@ vsRight.addEventListener('click', () => {
     }
 })
 
+// Hover to Trigger Dance on VS Dancer
+vsLeft.addEventListener('mouseover', () => {
+    vsLeft.style.animationName = 'dance-2';
+})
+
+vsLeft.addEventListener('mouseout', () => {
+    vsLeft.style.animationName = '';
+})
+
+vsRight.addEventListener('mouseover', () => {
+    vsRight.style.animationName = 'dance-3';
+})
+
+vsRight.addEventListener('mouseout', () => {
+    vsRight.style.animationName = '';
+})
+
+
 // Submit Winner and Trigger Next Game
 document.addEventListener('keydown', (e) => {
     if (e.key === "Enter") {
@@ -149,7 +165,7 @@ document.addEventListener('keydown', (e) => {
             vsRight.style.display = 'block';
             statsContainer.style.display = 'none';
             statsList.style.display = 'none';
-            matchInstructions.innerText = "Click an Animal to show/hide its stats!"
+            matchInstructions.innerText = "Click on an animal to show its stats!"
 
             if (game === 2) {
                 vsLeft.src = animal3.image_link;
@@ -179,11 +195,11 @@ document.addEventListener('keydown', (e) => {
                 if (champ === semisWinner1) {
                     vsRight.style.display = 'none';
                     vsLeft.style.animationName = 'dance-4'
-                    matchInstructions.innerText = 'Press Enter to play again!';
+                    matchInstructions.innerText = 'Press enter to play again!';
                 } else if (champ === semisWinner2) {
                     vsLeft.style.display = 'none';
                     vsRight.style.animationName = 'dance-4'
-                    matchInstructions.innerText = 'Press Enter to play again!';
+                    matchInstructions.innerText = 'Press enter to play again!';
                 }
             } else if (game === 9) {
                 tournamentDisplay.style.display = 'block';
@@ -192,7 +208,7 @@ document.addEventListener('keydown', (e) => {
                 counter = 1;
                 resetBracket();
                 setupR1();
-                instructionText.innerText = 'Click to Start Round 1';
+                instructionText.innerText = 'Click to start Round 1';
             }
         }
     }
@@ -405,18 +421,18 @@ function displayStatsL() {
 if (statsOn === false) {
     showStats1();
     vsRight.style.display = 'none';
-    statsContainer.style.display = 'block';
+    statsContainer.style.display = 'flex';
     if (game < 8) {
         if(game === 7) {
-            matchInstructions.innerText = "Press Enter to Choose the Champion!"
+            matchInstructions.innerText = "Press enter to choose the Champion!"
         }
-        else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
+        else {matchInstructions.innerText = "Click the animal again to hide stats. Press enter to lock in the winner"
         }
     }
     statsOn = true;
 }
 else if (statsOn === true) {
-    matchInstructions.innerText = "Click an Animal to show/hide its stats!"
+    matchInstructions.innerText = "Click on an animal to show its stats!"
     vsRight.style.display = 'block';
     statsContainer.style.display = 'none';
     statsOn = false;
@@ -427,18 +443,18 @@ function displayStatsR() {
     if (statsOn === false) {
         showStats2();
         vsLeft.style.display = 'none';
-        statsContainer.style.display = 'block';
+        statsContainer.style.display = 'flex';
         if (game < 8) {
             if(game === 7) {
-                matchInstructions.innerText = "Press Enter to Choose the Champion!"
+                matchInstructions.innerText = "Press enter to choose the Champion!"
             }
-            else {matchInstructions.innerText = "Press Enter to Lock in the Winner"
+            else {matchInstructions.innerText = "Click the animal again to hide stats. Press enter to lock in the winner"
             }
         }
         statsOn = true;
     }
     else if (statsOn === true) {
-        matchInstructions.innerText = "Click an Animal to show/hide its stats!"
+        matchInstructions.innerText = "Click on an animal to show its stats!"
         vsLeft.style.display = 'block';
         statsContainer.style.display = 'none';
         statsOn = false;
