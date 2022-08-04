@@ -197,19 +197,11 @@ document.addEventListener('keydown', (e) => {
                 if (champ === semisWinner1) {
                     vsRight.style.display = 'none';
                     vsLeft.style.animationName = 'dance-4'
-<<<<<<< HEAD
                     matchInstructions.innerText = 'Gaze upon your CHAMPION!\nPress Enter to play again!';
                 } else if (champ === semisWinner2) {
                     vsLeft.style.display = 'none';
                     vsRight.style.animationName = 'dance-4'
                     matchInstructions.innerText = 'Gaze upon your CHAMPION!\nPress Enter to play again!';
-=======
-                    matchInstructions.innerText = 'Press enter to play again!';
-                } else if (champ === semisWinner2) {
-                    vsLeft.style.display = 'none';
-                    vsRight.style.animationName = 'dance-4'
-                    matchInstructions.innerText = 'Press enter to play again!';
->>>>>>> 917509ec9580b6c54a0ec942d8ed6af81ae72c15
                 }
             } else if (game === 9) {
                 tournamentDisplay.style.display = 'block';
@@ -437,7 +429,7 @@ if (statsOn === false) {
         if(game === 7) {
             matchInstructions.innerText = "Press enter to choose the Champion!"
         }
-        else {matchInstructions.innerText = "Click the animal again to hide stats. Press enter to lock in the winner"
+        else {matchInstructions.innerText = "Click the animal again to hide its stats. Press enter to lock in the winner"
         }
     }
     statsOn = true;
@@ -459,7 +451,7 @@ function displayStatsR() {
             if(game === 7) {
                 matchInstructions.innerText = "Press enter to choose the Champion!"
             }
-            else {matchInstructions.innerText = "Click the animal again to hide stats. Press enter to lock in the winner"
+            else {matchInstructions.innerText = "Click the animal again to hide its stats. Press enter to lock in the winner"
             }
         }
         statsOn = true;

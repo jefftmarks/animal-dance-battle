@@ -230,6 +230,7 @@ div {
    width: 600px;
    height: 100%;
    display: none;
+   overflow: scroll;
 
    font-family: prompt;
    font-size: 25px;
