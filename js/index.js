@@ -33,11 +33,10 @@ const div13 = document.getElementById('div-13');
 const div14 = document.getElementById('div-14');
 
 // ---------- Trackers ----------
-let ready = true;
-let counter = 1;
-let game = 1;
-let round = 0;
-statsOn = false;
+let counter = 1; //used to populate initial bracket and create animal objects
+let game = 1; //used to keep track of how many matches have been played
+let round = 0; //used to keep track of which round the tournament is currently in
+statsOn = false; //used to keep track of whether stats are currently being displayed/whether pressing enter will currently select a match winner.
 
 let quartersWinner1;
 let quartersWinner2;
@@ -59,7 +58,7 @@ let animal8 = {};
 
 // ---------- Event Listners ----------
 
-// Start Button to Launch Rounds
+// Start Button to Launch Rounds.  Hides the bracket and shows the head to head rounds.  The correct animals are displayed based on the 'round' tracker.
 startBtn.addEventListener('click', () => {
     if (round === 0) {
         setupR1();
@@ -88,14 +87,13 @@ startBtn.addEventListener('click', () => {
     }
 });
 
-// Select Winner (Left & Right)
+// Select Winner (Left & Right).  Determines which animal advances based on which one is clicked most recently.  The correct animal is sent to the next round based on the 'game' counter.
 
 // Left
 vsLeft.addEventListener('click', () => {
     if (game!== 8) {
         displayStatsL();
         statsList.style.display = 'block';
-        ready = true;
         if (game === 1) {
             quartersWinner1 = animal1;
         } else if (game === 2) {
@@ -119,7 +117,6 @@ vsRight.addEventListener('click', () => {
     if (game !== 8) {
         displayStatsR();
         statsList.style.display = 'block';
-        ready = true;
         if (game === 1) {
             quartersWinner1 = animal2;
         } else if (game === 2) {
@@ -157,6 +154,7 @@ vsRight.addEventListener('mouseout', () => {
 
 
 // Submit Winner and Trigger Next Game
+//Pressing enter while a winner is selected (depending on the 'statsOn' tracker) will trigger the next match to start and send the winning animal to the next round or display the bracket (depending on the 'game' variable).
 document.addEventListener('keydown', (e) => {
     if (e.key === "Enter") {
         if ((vsDisplay.style.display = 'block' && statsOn === true) || (game === 8)) {
@@ -203,6 +201,7 @@ document.addEventListener('keydown', (e) => {
                     vsRight.style.animationName = 'dance-4'
                     matchInstructions.innerText = 'Gaze upon your CHAMPION!\nPress Enter to play again!';
                 }
+                //restarts the game with the first round bracket already populated with new animals.
             } else if (game === 9) {
                 tournamentDisplay.style.display = 'block';
                 vsDisplay.style.display = 'none';
@@ -230,7 +229,7 @@ function assignDancer(dancer) {
 
     counter++;
 }
-
+//creates an object for each animal and assigns them a random dance move based on their name.
 function setupR1() {
     fetch('https://zoo-animal-api.herokuapp.com/animals/rand/8')
     .then(res => res.json())
@@ -254,7 +253,8 @@ function setupR1() {
         animal8['sigDanceMove'] = `${danceMoveGenerator(`${animal8.name}`, danceMoves)}`;
     })
 }
-
+//populates the appropriate spots on the bracket
+//Round 2
 function startR2() {
     const dancer9 = document.createElement('img');
     dancer9.src = quartersWinner1.image_link;
@@ -276,7 +276,7 @@ function startR2() {
     div12.append(dancer12);
     setAnimation(div12);
 }
-
+//Round 3
 function startR3() {
     const dancer13 = document.createElement('img');
     dancer13.src = semisWinner1.image_link;
@@ -288,7 +288,7 @@ function startR3() {
     div14.append(dancer14);
     setAnimation(div14);
 }
-
+// functions to reset the bracket to start a new tournament
 function resetBracket() {
     div1.firstChild.remove();
     div2.firstChild.remove();
@@ -326,6 +326,8 @@ function resetBracket() {
 
 
 //show animal stats
+
+//shows the stats of the animal on the left depending on game counter
 function showStats1() {
     statsList.style.display = 'block';
     if (game === 1) {
@@ -372,7 +374,7 @@ function showStats1() {
         moveStat.innerText = `Signature Dance Move: ${semisWinner1.sigDanceMove}`
     }
 }
-
+//shows the stats of the animal on the right depending on game counter
 function showStats2() {
     statsList.style.display = 'block';
     if (game === 1) {
@@ -419,17 +421,18 @@ function showStats2() {
     }
 }
 //toggle stats display
-
+//toggles between displaying the stats for the animal clocked on/showing animal's opponent.  Also toggles displayed instructions.  Next match can only be initiated if an animal is currently selected (based on statsOn tracker).
 function displayStatsL() {
 if (statsOn === false) {
     showStats1();
     vsRight.style.display = 'none';
     statsContainer.style.display = 'flex';
+    //disables functionality if a winner has been chosen.
     if (game < 8) {
         if(game === 7) {
             matchInstructions.innerText = "Press enter to choose the Champion!"
         }
-        else {matchInstructions.innerText = "Click the animal again to hide its stats. Press enter to lock in the winner"
+        else {matchInstructions.innerText = "Click the animal again to hide stats. Press enter to lock in the winner"
         }
     }
     statsOn = true;
@@ -451,7 +454,7 @@ function displayStatsR() {
             if(game === 7) {
                 matchInstructions.innerText = "Press enter to choose the Champion!"
             }
-            else {matchInstructions.innerText = "Click the animal again to hide its stats. Press enter to lock in the winner"
+            else {matchInstructions.innerText = "Click the animal again to hide stats. Press enter to lock in the winner"
             }
         }
         statsOn = true;
@@ -463,7 +466,7 @@ function displayStatsR() {
         statsOn = false;
     }
 }
-
+//upon creating animal object, assigns a signature dance move to the animal based on its name and an array of dance moves
 function danceMoveGenerator(name, danceMove) {
     const rawName = name.split(' ').slice(-1)[0];
     const nameArray = rawName.split('');
@@ -473,8 +476,6 @@ function danceMoveGenerator(name, danceMove) {
     return `${titleCaseName} ${danceMove[Math.floor(Math.random() * 20) + 1]}`
 }
 
-function titleCase(str) {
-}
 
 
 // ---------- Animation ----------
